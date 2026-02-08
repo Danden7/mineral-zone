@@ -1,0 +1,367 @@
+/*
+Theme Name: Arkana Duszy
+Theme URI: https://example.com/arkana-duszy
+Author: Arkana Duszy
+Description: Mistyczny landing page dla odczytów duszy.
+Version: 1.0.0
+Text Domain: arkana-duszy
+*/
+
+:root {
+  color-scheme: dark;
+  font-family: "Cardo", serif;
+  --violet: #b77bff;
+  --violet-dark: #6f3bb4;
+  --plum: #2b123e;
+  --night: #120916;
+  --text: #f6e9ff;
+  --muted: rgba(246, 233, 255, 0.72);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: radial-gradient(circle at top, #3f2159 0%, #1b0f28 45%, #0a0610 100%);
+  color: var(--text);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.sky-overlay {
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(#ffffff55 1px, transparent 1px),
+    radial-gradient(#ffffff22 1px, transparent 1px);
+  background-size: 120px 120px, 200px 200px;
+  background-position: 0 0, 40px 80px;
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 8vw;
+  backdrop-filter: blur(18px);
+  background: linear-gradient(180deg, rgba(10, 6, 16, 0.85), rgba(10, 6, 16, 0.2));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.logo {
+  font-family: "Cinzel", serif;
+  letter-spacing: 0.12em;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+}
+
+.nav {
+  display: flex;
+  gap: 28px;
+  font-size: 0.95rem;
+}
+
+.nav a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nav a:hover {
+  color: var(--text);
+}
+
+.cta {
+  background: linear-gradient(135deg, var(--violet), var(--violet-dark));
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-family: "Cinzel", serif;
+  cursor: pointer;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 48px;
+  padding: 96px 8vw 72px;
+  align-items: center;
+}
+
+.hero-content h1 {
+  font-family: "Cinzel", serif;
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  margin-bottom: 16px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.hero-subtitle {
+  color: var(--muted);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.primary,
+.ghost {
+  border-radius: 999px;
+  padding: 12px 26px;
+  font-family: "Cinzel", serif;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+}
+
+.primary {
+  background: linear-gradient(135deg, var(--violet), var(--violet-dark));
+  color: #fff;
+  border: none;
+}
+
+.ghost {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: transparent;
+  color: var(--text);
+}
+
+.hero-card {
+  background: rgba(25, 13, 36, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 28px;
+  border-radius: 24px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
+}
+
+.hero-card h2 {
+  font-family: "Cinzel", serif;
+  margin-bottom: 16px;
+}
+
+.hero-card ul {
+  list-style: none;
+  display: grid;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.hero-card li::before {
+  content: "✦";
+  color: var(--violet);
+  margin-right: 12px;
+}
+
+.hero-note {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 14px;
+  color: var(--muted);
+}
+
+.section {
+  padding: 72px 8vw;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 48px;
+}
+
+.section-header h2 {
+  font-family: "Cinzel", serif;
+  font-size: clamp(2rem, 3vw, 3rem);
+  margin-bottom: 12px;
+}
+
+.section-header p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.steps article {
+  background: rgba(17, 10, 26, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 24px;
+  border-radius: 20px;
+}
+
+.steps h3 {
+  font-family: "Cinzel", serif;
+  margin-bottom: 10px;
+}
+
+.steps p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.tile {
+  background: linear-gradient(180deg, rgba(42, 19, 60, 0.7), rgba(16, 8, 24, 0.9));
+  border-radius: 22px;
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+}
+
+.tile span {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+}
+
+.tile h3 {
+  margin-top: 14px;
+  font-family: "Cinzel", serif;
+}
+
+.order {
+  background: rgba(12, 8, 20, 0.6);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.order-form {
+  display: grid;
+  gap: 18px;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.order-form label {
+  display: grid;
+  gap: 8px;
+  font-size: 0.95rem;
+}
+
+.order-form input {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(15, 10, 24, 0.9);
+  color: var(--text);
+  font-family: inherit;
+}
+
+.order-form button {
+  margin-top: 10px;
+  background: linear-gradient(135deg, var(--violet), var(--violet-dark));
+  color: #fff;
+  border: none;
+  padding: 14px 20px;
+  border-radius: 999px;
+  font-family: "Cinzel", serif;
+  cursor: pointer;
+}
+
+.fineprint {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.testimonials article {
+  background: rgba(22, 12, 30, 0.8);
+  border-radius: 18px;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: grid;
+  gap: 16px;
+  min-height: 180px;
+}
+
+.testimonials span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.footer {
+  padding: 40px 8vw 60px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer h3 {
+  font-family: "Cinzel", serif;
+  margin-bottom: 8px;
+}
+
+.footer-links {
+  display: grid;
+  gap: 8px;
+}
+
+.footer a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  .topbar {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .topbar {
+    position: static;
+  }
+}
